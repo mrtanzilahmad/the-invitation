@@ -1,31 +1,50 @@
 /* =========================================
-   GENERAL
+   RESET
 ========================================= */
 
 * {
     box-sizing: border-box;
 }
 
+
 html,
 body {
+
     margin: 0;
+
     padding: 0;
+
     width: 100%;
+
     min-height: 100%;
+
 }
 
+
 body {
+
     min-height: 100vh;
 
     display: flex;
+
     justify-content: center;
 
+    overflow-x: hidden;
+
     background:
+
         radial-gradient(
             circle at 20% 20%,
-            rgba(255, 255, 255, 0.5),
+            rgba(255,255,255,.55),
             transparent 25%
         ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,255,255,.35),
+            transparent 30%
+        ),
+
         linear-gradient(
             135deg,
             #f9e3e8,
@@ -35,47 +54,68 @@ body {
 
     color: #713847;
 
-    font-family: "Quicksand", sans-serif;
+    font-family:
+        "Quicksand",
+        sans-serif;
 
-    overflow-x: hidden;
 }
 
 
 /* =========================================
-   PAGE
+   PAGES
 ========================================= */
 
 .page {
+
     width: 100%;
+
     min-height: 100vh;
 
     display: none;
 
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     padding: 30px 18px;
 
     position: relative;
+
 }
+
 
 .page.active {
+
     display: flex;
 
-    animation: pageIn 0.6s ease;
+    animation:
+        pageIn .6s ease;
+
 }
+
 
 @keyframes pageIn {
 
     from {
+
         opacity: 0;
-        transform: translateY(15px) scale(0.98);
+
+        transform:
+            translateY(18px)
+            scale(.98);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
+
     }
 
 }
@@ -87,71 +127,125 @@ body {
 
 .card {
 
-    width: min(90vw, 480px);
+    width:
+        min(90vw, 480px);
 
-    background: rgba(250, 250, 240, 0.94);
+    background:
+        rgba(250,250,240,.94);
 
-    border-radius: 28px;
+    border-radius: 30px;
 
     padding: 38px 32px;
 
-    box-shadow:
-        0 25px 70px rgba(112, 67, 80, 0.15),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
-
     text-align: center;
 
-    backdrop-filter: blur(10px);
+    box-shadow:
+
+        0 25px 70px
+        rgba(112,67,80,.16),
+
+        inset 0 0 0 1px
+        rgba(255,255,255,.7);
+
+    backdrop-filter:
+        blur(12px);
+
 }
 
 
 /* =========================================
-   INVITATION
+   PHOTO
 ========================================= */
 
 .photo-wrapper {
 
-    width: 110px;
-    height: 110px;
+    width: 120px;
 
-    margin: 0 auto 24px;
+    height: 120px;
 
-    border-radius: 20px;
+    margin:
+        0 auto 22px;
+
+    border-radius: 24px;
 
     overflow: hidden;
 
     background: #eee9df;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.08);
+        0 10px 30px
+        rgba(0,0,0,.10);
 
 }
+
 
 .pug-photo {
 
     width: 100%;
+
     height: 100%;
+
+    display: block;
 
     object-fit: cover;
 
-    display: block;
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.small-label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #b27383;
+
+    margin-bottom: 12px;
+
+}
+
+
+h1 {
+
+    font-family:
+        "DM Serif Display",
+        serif;
+
+    color: #713847;
 
 }
 
 
 .invitation-card h1 {
 
-    margin: 0 auto 30px;
+    margin: 0 auto 10px;
 
-    max-width: 380px;
+    max-width: 400px;
 
-    font-family: "DM Serif Display", serif;
-
-    font-size: clamp(27px, 6vw, 36px);
+    font-size:
+        clamp(28px, 7vw, 38px);
 
     line-height: 1.2;
 
-    color: #713847;
+}
+
+
+.subtext {
+
+    font-size: 14px;
+
+    color: #956071;
+
+    margin:
+        0 0 27px;
 
 }
 
@@ -168,7 +262,7 @@ body {
 
     align-items: center;
 
-    gap: 18px;
+    gap: 16px;
 
     min-height: 55px;
 
@@ -179,61 +273,69 @@ button {
 
     border: none;
 
-    font-family: "Quicksand", sans-serif;
+    font-family:
+        "Quicksand",
+        sans-serif;
 
-    font-weight: 600;
+    font-weight: 700;
 
     cursor: pointer;
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
 
 }
 
 
 .yes-button {
 
-    min-width: 100px;
+    min-width: 115px;
 
-    padding: 14px 25px;
+    padding:
+        14px 26px;
 
     border-radius: 30px;
 
-    background: #e58ca4;
+    background:
+        #e58ca4;
 
     color: white;
 
     box-shadow:
-        0 8px 20px rgba(229, 140, 164, 0.3);
+        0 9px 22px
+        rgba(229,140,164,.30);
 
 }
 
 
 .yes-button:hover {
 
-    transform: translateY(-3px) scale(1.04);
+    transform:
+        translateY(-3px)
+        scale(1.04);
 
     box-shadow:
-        0 12px 25px rgba(229, 140, 164, 0.4);
+        0 13px 28px
+        rgba(229,140,164,.40);
 
 }
 
 
 .no-button {
 
-    min-width: 90px;
+    min-width: 100px;
 
-    padding: 13px 22px;
+    padding:
+        13px 24px;
 
     border-radius: 30px;
 
-    background: #a45bc1;
+    background:
+        #a45bc1;
 
     color: white;
-
-    position: relative;
 
 }
 
@@ -242,31 +344,24 @@ button {
    DATE PAGE
 ========================================= */
 
-.date-card {
-
-    padding: 40px 30px;
-
-}
-
-
 .calendar-icon {
 
-    font-size: 42px;
+    font-size: 48px;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
 }
 
 
 .date-card h1 {
 
-    font-family: "DM Serif Display", serif;
+    font-size:
+        clamp(30px, 7vw, 40px);
 
-    font-size: clamp(30px, 7vw, 40px);
+    line-height: 1.15;
 
-    margin: 0 0 30px;
-
-    color: #713847;
+    margin:
+        0 0 10px;
 
 }
 
@@ -275,7 +370,7 @@ button {
 
     text-align: left;
 
-    margin-bottom: 20px;
+    margin-bottom: 19px;
 
 }
 
@@ -284,9 +379,10 @@ button {
 
     display: block;
 
-    margin: 0 0 8px 4px;
+    margin:
+        0 0 8px 3px;
 
-    font-size: 14px;
+    font-size: 13px;
 
     font-weight: 700;
 
@@ -300,19 +396,24 @@ select {
 
     width: 100%;
 
-    height: 48px;
+    height: 50px;
 
-    padding: 0 14px;
+    padding:
+        0 14px;
 
-    border-radius: 10px;
+    border-radius: 12px;
 
-    border: 1px solid #b9909d;
+    border:
+        1px solid #c7a0aa;
 
-    background: rgba(255, 255, 255, 0.35);
+    background:
+        rgba(255,255,255,.55);
 
     color: #633442;
 
-    font-family: "Quicksand", sans-serif;
+    font-family:
+        "Quicksand",
+        sans-serif;
 
     font-size: 15px;
 
@@ -324,10 +425,12 @@ select {
 input:focus,
 select:focus {
 
-    border-color: #dc87a1;
+    border-color:
+        #dc87a1;
 
     box-shadow:
-        0 0 0 3px rgba(220, 135, 161, 0.15);
+        0 0 0 3px
+        rgba(220,135,161,.15);
 
 }
 
@@ -336,77 +439,158 @@ select:focus {
 
     width: 100%;
 
-    height: 48px;
+    height: 50px;
 
     margin-top: 8px;
 
-    border-radius: 25px;
+    border-radius: 26px;
 
-    background: #e58ca4;
+    background:
+        #e58ca4;
 
     color: white;
 
     font-size: 15px;
 
     box-shadow:
-        0 8px 20px rgba(229, 140, 164, 0.25);
+        0 9px 22px
+        rgba(229,140,164,.25);
 
 }
 
 
 .continue-button:hover {
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 
-    background: #dd819a;
+    background:
+        #dc7e99;
+
+}
+
+
+.continue-button:disabled {
+
+    opacity: .65;
+
+    cursor: wait;
+
+    transform: none;
 
 }
 
 
 /* =========================================
-   LETTER
+   SENDING
+========================================= */
+
+.sending-message {
+
+    display: none;
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    color: #9a6070;
+
+}
+
+
+.sending-message.show {
+
+    display: block;
+
+    animation:
+        pulse 1s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+
+        opacity: .45;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error-message {
+
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    color: #b14e63;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   FINAL PAGE
 ========================================= */
 
 .letter-card {
 
-    padding: 48px 30px;
+    padding:
+        46px 30px;
 
 }
 
 
 .letter-decoration {
 
-    letter-spacing: 8px;
-
     color: #d994a7;
 
-    margin-bottom: 25px;
+    letter-spacing: 8px;
+
+    margin-bottom: 20px;
 
 }
 
 
 .letter-card h1 {
 
-    margin: 0 0 12px;
+    margin:
+        0 0 13px;
 
-    font-family: "DM Serif Display", serif;
-
-    font-size: clamp(30px, 7vw, 40px);
+    font-size:
+        clamp(31px, 7vw, 41px);
 
     line-height: 1.15;
-
-    color: #713847;
 
 }
 
 
 .letter-card h2 {
 
-    margin: 0 auto 22px;
+    margin:
+        0 auto 24px;
 
     max-width: 380px;
 
-    font-family: "DM Serif Display", serif;
+    font-family:
+        "DM Serif Display",
+        serif;
 
     font-size: 22px;
 
@@ -426,22 +610,51 @@ select:focus {
 }
 
 
-.selected-date {
+.date-confirmation {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin:
+        12px auto;
+
+    padding:
+        11px 17px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(229,140,164,.12);
+
+    color: #7b4051;
 
     font-weight: 700;
 
-    margin-top: 20px;
+    font-size: 13px;
 
 }
 
 
 .tiny-hearts {
 
-    margin: 25px 0;
+    margin:
+        20px 0;
 
     color: #c8889c;
 
     font-size: 13px;
+
+}
+
+
+.private-note {
+
+    font-size: 12px !important;
+
+    opacity: .75;
 
 }
 
@@ -454,7 +667,8 @@ select:focus {
 
     margin-top: 22px;
 
-    color: rgba(100, 65, 75, 0.55);
+    color:
+        rgba(100,65,75,.55);
 
     font-size: 12px;
 
@@ -462,7 +676,7 @@ select:focus {
 
 
 /* =========================================
-   FLOATING DECORATIONS
+   DECORATIONS
 ========================================= */
 
 .floating-heart,
@@ -474,7 +688,7 @@ select:focus {
 
     user-select: none;
 
-    opacity: 0.65;
+    opacity: .55;
 
     z-index: 0;
 
@@ -550,17 +764,30 @@ select:focus {
 
     .page {
 
-        padding: 20px 14px;
+        padding:
+            20px 14px;
 
     }
+
 
     .card {
 
-        padding: 30px 22px;
+        padding:
+            30px 22px;
 
-        border-radius: 24px;
+        border-radius: 25px;
 
     }
+
+
+    .photo-wrapper {
+
+        width: 105px;
+
+        height: 105px;
+
+    }
+
 
     .invitation-card h1 {
 
@@ -568,11 +795,13 @@ select:focus {
 
     }
 
+
     .date-card h1 {
 
         font-size: 32px;
 
     }
+
 
     .letter-card h1 {
 
@@ -580,26 +809,10 @@ select:focus {
 
     }
 
+
     .letter-card h2 {
 
         font-size: 20px;
-
-    }
-
-}
-
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    * {
-
-        animation-duration: 0.01ms !important;
-
-        transition-duration: 0.01ms !important;
 
     }
 
