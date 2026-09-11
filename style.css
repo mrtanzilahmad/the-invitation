@@ -1,0 +1,606 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.5),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #f9e3e8,
+            #f5dce4,
+            #f9e8df
+        );
+
+    color: #713847;
+
+    font-family: "Quicksand", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 18px;
+
+    position: relative;
+}
+
+.page.active {
+    display: flex;
+
+    animation: pageIn 0.6s ease;
+}
+
+@keyframes pageIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+
+    width: min(90vw, 480px);
+
+    background: rgba(250, 250, 240, 0.94);
+
+    border-radius: 28px;
+
+    padding: 38px 32px;
+
+    box-shadow:
+        0 25px 70px rgba(112, 67, 80, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   INVITATION
+========================================= */
+
+.photo-wrapper {
+
+    width: 110px;
+    height: 110px;
+
+    margin: 0 auto 24px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #eee9df;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+}
+
+.pug-photo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.invitation-card h1 {
+
+    margin: 0 auto 30px;
+
+    max-width: 380px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(27px, 6vw, 36px);
+
+    line-height: 1.2;
+
+    color: #713847;
+
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-height: 55px;
+
+}
+
+
+button {
+
+    border: none;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.yes-button {
+
+    min-width: 100px;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    background: #e58ca4;
+
+    color: white;
+
+    box-shadow:
+        0 8px 20px rgba(229, 140, 164, 0.3);
+
+}
+
+
+.yes-button:hover {
+
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 12px 25px rgba(229, 140, 164, 0.4);
+
+}
+
+
+.no-button {
+
+    min-width: 90px;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    background: #a45bc1;
+
+    color: white;
+
+    position: relative;
+
+}
+
+
+/* =========================================
+   DATE PAGE
+========================================= */
+
+.date-card {
+
+    padding: 40px 30px;
+
+}
+
+
+.calendar-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.date-card h1 {
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(30px, 7vw, 40px);
+
+    margin: 0 0 30px;
+
+    color: #713847;
+
+}
+
+
+.form-group {
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin: 0 0 8px 4px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #754352;
+
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid #b9909d;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    color: #633442;
+
+    font-family: "Quicksand", sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: #dc87a1;
+
+    box-shadow:
+        0 0 0 3px rgba(220, 135, 161, 0.15);
+
+}
+
+
+.continue-button {
+
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 8px;
+
+    border-radius: 25px;
+
+    background: #e58ca4;
+
+    color: white;
+
+    font-size: 15px;
+
+    box-shadow:
+        0 8px 20px rgba(229, 140, 164, 0.25);
+
+}
+
+
+.continue-button:hover {
+
+    transform: translateY(-2px);
+
+    background: #dd819a;
+
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter-card {
+
+    padding: 48px 30px;
+
+}
+
+
+.letter-decoration {
+
+    letter-spacing: 8px;
+
+    color: #d994a7;
+
+    margin-bottom: 25px;
+
+}
+
+
+.letter-card h1 {
+
+    margin: 0 0 12px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(30px, 7vw, 40px);
+
+    line-height: 1.15;
+
+    color: #713847;
+
+}
+
+
+.letter-card h2 {
+
+    margin: 0 auto 22px;
+
+    max-width: 380px;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 22px;
+
+    line-height: 1.35;
+
+    color: #7b4051;
+
+}
+
+
+.letter-card p {
+
+    font-size: 14px;
+
+    color: #805361;
+
+}
+
+
+.selected-date {
+
+    font-weight: 700;
+
+    margin-top: 20px;
+
+}
+
+
+.tiny-hearts {
+
+    margin: 25px 0;
+
+    color: #c8889c;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.built-by {
+
+    margin-top: 22px;
+
+    color: rgba(100, 65, 75, 0.55);
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   FLOATING DECORATIONS
+========================================= */
+
+.floating-heart,
+.floating-flower {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    opacity: 0.65;
+
+    z-index: 0;
+
+}
+
+
+.floating-heart {
+
+    color: #9c596b;
+
+    font-size: 20px;
+
+}
+
+
+.heart-1 {
+
+    left: 8%;
+
+    bottom: 18%;
+
+}
+
+
+.heart-2 {
+
+    right: 10%;
+
+    top: 22%;
+
+}
+
+
+.heart-3 {
+
+    right: 20%;
+
+    bottom: 12%;
+
+}
+
+
+.floating-flower {
+
+    font-size: 18px;
+
+}
+
+
+.flower-1 {
+
+    left: 15%;
+
+    top: 20%;
+
+}
+
+
+.flower-2 {
+
+    right: 15%;
+
+    bottom: 25%;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .page {
+
+        padding: 20px 14px;
+
+    }
+
+    .card {
+
+        padding: 30px 22px;
+
+        border-radius: 24px;
+
+    }
+
+    .invitation-card h1 {
+
+        font-size: 29px;
+
+    }
+
+    .date-card h1 {
+
+        font-size: 32px;
+
+    }
+
+    .letter-card h1 {
+
+        font-size: 31px;
+
+    }
+
+    .letter-card h2 {
+
+        font-size: 20px;
+
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation-duration: 0.01ms !important;
+
+        transition-duration: 0.01ms !important;
+
+    }
+
+}
