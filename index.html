@@ -3,15 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>A Little Surprise ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1>Will you go on a date with me? ❤️</h1>
+    <!-- Floating decorations -->
+    <div class="floating-heart heart-1">♥</div>
+    <div class="floating-heart heart-2">♥</div>
+    <div class="floating-heart heart-3">♥</div>
+    <div class="floating-flower flower-1">🌸</div>
+    <div class="floating-flower flower-2">🌸</div>
 
-    <button>YES ❤️</button>
-    <button>NO 😭</button>
+    <!-- ========================= -->
+    <!-- PAGE 1 - INVITATION -->
+    <!-- ========================= -->
+
+    <main id="invitationPage" class="page active">
+
+        <div class="card invitation-card">
+
+            <div class="photo-wrapper">
+                <img
+                    src="images/pug.jpg"
+                    alt="Cute pug"
+                    class="pug-photo"
+                >
+            </div>
+
+            <h1>
+                🌸 Will you go on a date with me? 🌸
+            </h1>
+
+            <div class="buttons">
+
+                <button
+                    id="yesButton"
+                    class="yes-button"
+                    type="button"
+                >
+                    YES ♥
+                </button>
+
+                <button
+                    id="noButton"
+                    class="no-button"
+                    type="button"
+                >
+                    no 🐾
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="built-by">
+            ✦ made with love ✦
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- PAGE 2 - DATE & TIME -->
+    <!-- ========================= -->
+
+    <main id="datePage" class="page">
+
+        <div class="card date-card">
+
+            <div class="calendar-icon">
+                📅 🐾
+            </div>
+
+            <h1>
+                So... when are you free?
+            </h1>
+
+            <div class="form-group">
+
+                <label for="date">
+                    Pick a Day 📅
+                </label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="time">
+                    What Time? ⏰
+                </label>
+
+                <select id="time" required>
+
+                    <option value="">
+                        Select a time...
+                    </option>
+
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="12:30 PM">12:30 PM</option>
+
+                    <option value="1:00 PM">1:00 PM</option>
+                    <option value="1:30 PM">1:30 PM</option>
+
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="2:30 PM">2:30 PM</option>
+
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="3:30 PM">3:30 PM</option>
+
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="4:30 PM">4:30 PM</option>
+
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="5:30 PM">5:30 PM</option>
+
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="6:30 PM">6:30 PM</option>
+
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="7:30 PM">7:30 PM</option>
+
+                    <option value="8:00 PM">8:00 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+
+                    <option value="9:00 PM">9:00 PM</option>
+                </select>
+
+            </div>
+
+            <button
+                id="dateButton"
+                class="continue-button"
+                type="button"
+            >
+                set the date! ♥
+            </button>
+
+        </div>
+
+        <div class="built-by">
+            ✦ made with love ✦
+        </div>
+
+    </main>
+
+
+    <!-- ========================= -->
+    <!-- PAGE 3 - FINAL LETTER -->
+    <!-- ========================= -->
+
+    <main id="letterPage" class="page">
+
+        <div class="card letter-card">
+
+            <div class="letter-decoration">
+                ♥ ♥ ♥
+            </div>
+
+            <h1>
+                glad you didn't say no.
+            </h1>
+
+            <h2>
+                be ready by <span id="finalTime">6:00 PM</span>,
+                I'm coming to get you 🐷
+            </h2>
+
+            <p>
+                It's official. We're going on a date!
+            </p>
+
+            <p class="selected-date">
+                📅 <span id="finalDate"></span>
+            </p>
+
+            <div class="tiny-hearts">
+                ♥　♥　♥　♥　♥
+            </div>
+
+            <button
+                id="restartButton"
+                class="continue-button"
+                type="button"
+            >
+                I'm so happy ♥
+            </button>
+
+        </div>
+
+        <div class="built-by">
+            ✦ made with love ✦
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
 
 </body>
 </html>
